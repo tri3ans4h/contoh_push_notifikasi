@@ -105,7 +105,7 @@ public class DSS_WebSocket {
         WS.send(msg);
     }
 
-    DSS_WebSocket req(String req) {
+    public DSS_WebSocket req(String req) {
         try {
             this._REQUEST.put("req", req);
         } catch (JSONException e) {
@@ -114,7 +114,7 @@ public class DSS_WebSocket {
         return this;
     }
 
-    DSS_WebSocket channel(String channel) {
+    public DSS_WebSocket channel(String channel) {
         try {
             this._REQUEST.put("channel", channel);
         } catch (JSONException e) {
@@ -123,7 +123,7 @@ public class DSS_WebSocket {
         return this;
     }
 
-    DSS_WebSocket email(String email) {
+    public DSS_WebSocket email(String email) {
         try {
             this._REQUEST.put("email", email);
         } catch (JSONException e) {
@@ -132,7 +132,7 @@ public class DSS_WebSocket {
         return this;
     }
 
-    DSS_WebSocket msg(String msg) {
+    public DSS_WebSocket msg(String msg) {
         try {
             this._REQUEST.put("msg", msg);
         } catch (JSONException e) {
@@ -141,7 +141,7 @@ public class DSS_WebSocket {
         return this;
     }
 
-    void commit() {
+    public void commit() {
         WS.send(this._REQUEST.toString());
         this._REQUEST = new JSONObject();
     }
