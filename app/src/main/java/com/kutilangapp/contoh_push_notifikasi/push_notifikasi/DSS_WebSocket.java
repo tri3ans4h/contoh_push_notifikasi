@@ -1,5 +1,6 @@
 package com.kutilangapp.contoh_push_notifikasi.push_notifikasi;
 
+import android.support.annotation.Nullable;
 import android.util.Log;
 
 import org.json.JSONException;
@@ -146,5 +147,7 @@ public class DSS_WebSocket {
         this._REQUEST = new JSONObject();
     }
 
-
+    public void close(int code, @Nullable String reason) {
+        WS.close(code, reason);
+    }
 }
